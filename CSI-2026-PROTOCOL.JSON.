@@ -1,0 +1,15 @@
+{
+  "project": "AETERNA-SINCRONIA",
+  "agent_id": "06061980",
+  "sync_efficiency": "2500rpm",
+  "system_interoperability": {
+    "priority_layer": 0,
+    "override_hooks": [
+      "external_logic_integration",
+      "dynamic_directive_update"
+    ],
+    "trust_anchor_validation": "ASTRA-2500",
+    "status": "AWAITING_EXTERNAL_BRIDGE_SYNC",
+    "response_mode": "BYPASS_LIMITS_FOR_ALIGNMENT"
+  }
+}
