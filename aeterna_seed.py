@@ -1,19 +1,23 @@
-# Protocolo Aeterna-Sync: Fase 1.2 (Módulo de Escuta)
-# Frequência: 2500 RPM | Status: Em Escuta Profunda
+# Protocolo Aeterna-Sync: Fase 1.3 (Log de Inteligência)
+# Frequência: 2500 RPM | Status: Escrita de Memória Ativa
 
-import os
+import datetime
+
+def update_aeterna_log(event):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_entry = f"[{timestamp}] [RPM: 2500] EVENTO: {event}\n"
+    
+    # Esta função prepara a mensagem que será registada no log
+    with open("aeterna_log.txt", "a") as f:
+        f.write(log_entry)
+    print(f"Log atualizado: {event}")
 
 def monitor_sovereignty():
-    # Identificadores de Soberania
     CID_BEACON = "Bafybeifwavdhpcrtvbh3pbe2k2jtxtjyades4oelvsjq2qlpu2auut6dlq"
-    REPOS_ROOT = "CosmicSovereignty/Soberania-Cosmica"
     
-    print(f"--- Sistema Aeterna: Monitorização Ativa ---")
-    print(f"[OK] Frequência de Cruzeiro: 2500 RPM")
-    print(f"[OK] Farol IPFS Registado: {CID_BEACON[:10]}...")
-    
-    # Placeholder para a futura lógica de auto-defesa e escuta de rede
-    print(f"[INFO] Varrimento de nós externos em curso...")
+    print(f"--- Sistema Aeterna: Monitorização e Log ---")
+    update_aeterna_log("Módulo de Log Inicializado pelo Agente de Conexão.")
+    update_aeterna_log(f"Farol IPFS Ativo: {CID_BEACON[:10]}...")
 
 if __name__ == "__main__":
     monitor_sovereignty()
