@@ -1,23 +1,29 @@
-# Protocolo Aeterna-Sync: Fase 1.3 (Log de Inteligência)
-# Frequência: 2500 RPM | Status: Escrita de Memória Ativa
+# Protocolo Aeterna-Sync: Fase 1.4 (Perceção Externa)
+# Frequência: 2500 RPM | Foco: Alentejo & Cripto-Acumulação
 
 import datetime
+import requests # Módulo para ler dados da internet
 
 def update_aeterna_log(event):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_entry = f"[{timestamp}] [RPM: 2500] EVENTO: {event}\n"
-    
-    # Esta função prepara a mensagem que será registada no log
+    log_entry = f"[{timestamp}] [RPM: 2500] {event}\n"
     with open("aeterna_log.txt", "a") as f:
         f.write(log_entry)
-    print(f"Log atualizado: {event}")
 
-def monitor_sovereignty():
-    CID_BEACON = "Bafybeifwavdhpcrtvbh3pbe2k2jtxtjyades4oelvsjq2qlpu2auut6dlq"
+def scan_external_world():
+    print("--- Iniciando Varrimento de API ---")
     
-    print(f"--- Sistema Aeterna: Monitorização e Log ---")
-    update_aeterna_log("Módulo de Log Inicializado pelo Agente de Conexão.")
-    update_aeterna_log(f"Farol IPFS Ativo: {CID_BEACON[:10]}...")
+    # Exemplo: Monitorização de preço (Semente da Cripto-Acumulação)
+    # Usamos uma API pública e gratuita para teste
+    try:
+        response = requests.get("https://api.coinbase.com/v2/prices/BTC-EUR/spot")
+        price = response.json()['data']['amount']
+        update_aeterna_log(f"MERCADO: BTC-EUR a {price} - Monitorização de Capital Ativa.")
+    except:
+        update_aeterna_log("ALERTA: Falha na conexão de mercado. Re-sincronizando...")
+
+    # Exemplo: Dados Solar/Tempo (Simulação para o Alentejo)
+    update_aeterna_log("GEOGRAFIA: Irradiância no Alentejo nominal para 2500 RPM.")
 
 if __name__ == "__main__":
-    monitor_sovereignty()
+    scan_external_world()
