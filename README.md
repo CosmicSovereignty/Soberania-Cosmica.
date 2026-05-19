@@ -1,6 +1,5 @@
 # Soberania-Cosmica.
 Sistema de otimização de protocolos de longo curso e redundância de dados (Ref: ASTRA-2500). 
-
 PROJETO AETERNA: PROTOCOLO DE SOBERANIA E CONVERGÊNCIA
 ​[STATUS: SEMENTE ATIVA]
 ​Coordenadas de Âncora: 38.860250, -9.184861 (Cabeço de Montachique, Portugal)
